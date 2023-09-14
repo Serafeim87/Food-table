@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.nav{
+	background-color:crimson;
+	color:white;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	
+}
+
+.logo {
+    padding:10px 30px;
+	letter-spacing:2px;
+	font-size:20;
+	cursor:pointer;
+
+}
+.navlinks{
+	float:right;
+	padding-right:30px;
+	cursor:pointer;
+	
+	
+}
+.navlinks ul li{
+	display:inline-block;
+	padding-right:30px;
+	cursor:pointer;
+    
+}
+
+.navlinks ul li a{
+	text-decoration:none;
+	color:white;
+	font-size:17;
+	cursor:pointer;
+	text-transform:uppercase;
+	
+}
+
+.naveborder::after{
+	content:'';
+	width:0;
+	height:2px;
+	display:block;
+	background-color:white;
+	transition: width 0.3s ease;
+	
+}
+
+.naveborder:hover::after{
+	width:100%;
+}
+
+.header{
+    text-align: center;
+    padding-top:20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+ .naveborder:hover::after{
+        width:100%;
+    }
+    .container{
+        background-image:linear-gradient(to top, rgba( 145, 146, 122, 0.62),rgba( 145, 146, 122, 0.62)),url("assets/burger.jpg");
+        background-size:cover;
+        height:100%;
+        height: 850px;
+        text-align:center;
+    }
+    .container h1{
+        padding-top:120px;
+        color:white;
+        font-size:60
+    }
+    .order a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold
+    }
+    .order{
+        background-color:crimson;
+        padding:15px 10px;
+        border:none;
+        font-size:15;
+        border-radius:5px;
+        margin-top:55px;
+        transition:0.5s ease;
+        
+        
+
+       
+    }
+    .order:hover{
+        padding:20px 20px;
+    }
+
+    p{
+        font-weight: bold;
+    }

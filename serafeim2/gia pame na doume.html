@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
+    <script src="assets/2-cart.js"></script>
+    <title>Datafoods</title>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="add-subject">
+          <h1><a href="prwti sellida.html">Main Page</a></h1>
+          <h2>Our Menu</h2>
+          <div class="dropdown">
+            <label for="category-select">Select Category:</label>
+            <select id="category-select">
+              <option value="all">All</option>
+              <option value="FastFood">Fast Food</option> 
+              <option value="Drink">Drink</option> 
+              <option value="Lunch/Dinner">Lunch/Dinner</option> 
+            </select>
+            </div>
+        
+           
+            <div id="cart-products"></div>
+        </div>
+        <div id="cart-wrap">
+            <div id="cart-items"></div>
+          </div>
+         
+        
+          <template id="template-product">
+            <div id="cart-products"></div>
+            <div class="p-item">
+              <div class="img-conatiner"> <img class="p-img"></div>
+             
+              <div class="p-info">
+                
+                  <div class="p-name"></div>
+                  <div class="p-price"></div>
+                </div>
+                  <span class="p-category"></span> 
+                <div class="bnt">
+                <button class="cart p-add">+</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </template>
+          <template id="template-cart">
+          <div class="c-item">
+            <input class="c-qty" type="number" min="0">
+            <div class="c-name"></div>
+            <div class="c-price"></div>
+            <button class="c-del cart">X</button>
+          </div>
+          </template>
+          <template id="template-cart-checkout">
+          <div class="c-go">
+            <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
+            <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+          </div>
+          </template>
+
+       
+            
+     </body>
+
+<script>
+  var products = {
+  "1": {
+    name: "Burger",
+    img: "burger1.jpg",
+    price: 5.7,
+    category: "Fastfood",
+  },
+  "2": {
+    name: "Cheese burger",
+    img: "cheese.jpg",
+    price: 4,
+    category: "Fastfood",
+  },
+  "3": {
+    name: " Fries",
+    img: "fries.avif",
+    price: 4.5,
+    category: "Fastfood",
+  },
+  "4": {
+    name: "Corn Pizza",
+    img: "pizza.avif",
+    price:4,
+    category: "Fastfood",
+  },
+  "5": {
+    name: "Cold Drink",
+    img: "cold.jpg",
+    price:6,
+    category: "Drink",
+  },
+  "6": {
+    name: "Shakes",
+    img: "shakes.jpeg",
+    price:7,
+    category: "Drink",
+  },
+  "7": {
+    name: "Mojito",
+    img: "moji.jpg",
+    price:8,
+    category: "Drink",
+  },
+  "8": {
+    name: "Plain Roti",
+    img: "plain.avif",
+    price:9,
+    category: "Lunch/Dinner",
+  },
+  "9": {
+    name: "Rice",
+    img: "rice.avif",
+    price:10,
+    category: "Lunch/Dinner",
+  },
+  "10": {
+    name: "Dal",
+    img: "dal.avif",
+    price:11,
+    category: "Lunch/Dinner",
+  },
+};
+
+
+
+
+var categorySelect = document.getElementById('category-select');
+categorySelect.addEventListener('change', function() {
+  var category = this.value;
+
+  var productItems = document.querySelectorAll('.p-item');
+  productItems.forEach(function(product) {
+    product.style.display = 'none';
+  });
+ 
+  if (category === 'all') {
+    productItems.forEach(function(product) {
+      product.style.display = 'block';
+    });
+  } else {
+    var filteredItems = document.querySelectorAll('.p-item');
+    filteredItems.forEach(function(product) {
+      if (product.querySelector('.p-category').innerText.toLowerCase() === category.toLowerCase()) {
+        product.style.display = 'block';
+      }
+    });
+  }
+});
+
+  
+</script>
+</html>
